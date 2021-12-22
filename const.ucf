@@ -1,0 +1,27 @@
+# BASYS 2 UCF
+
+NET "CLK" LOC = "B8";
+#NET "CLK_50MHz" LOC = "M6"; # External socketed Oscillator (if you have one)
+
+# Pin assignment for VGA
+NET "HSYNC"   LOC = "J14"  ;
+NET "VSYNC"   LOC = "K13"  ;
+NET "R"  LOC = "F13"  ;
+NET "G"  LOC = "G14"  ;
+NET "B"  LOC = "J13"  ;
+NET "SELECTION<0>"  LOC = "N3"  ;
+NET "SELECTION<1>"  LOC = "E2"  ;
+NET "COLOR<0>"  LOC = "L3"  ;
+NET "COLOR<1>"  LOC = "P11"  ;
+NET "RST" LOC = "G3";
+
+NET "UP" LOC = "A7";
+NET "DOWN" LOC = "M4";
+NET "LEFT" LOC = "C11";
+NET "RIGHT" LOC = "G12"; 
+
+#Created by Constraints Editor (xc3s100e-cp132-4) - 2013/04/26
+NET "CLK" TNM_NET = CLK_50MHz;
+TIMESPEC TS_CLK_50MHz = PERIOD "CLK_50MHz" 50 MHz HIGH 50%;
+NET "CLK25" TNM_NET = vga/clk_div/clk_out1;
+TIMESPEC TS_CLK_25MHz = PERIOD "vga/clk_div/clk_out1" 25 MHz HIGH 50%;
